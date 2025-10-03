@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YEYA — Organisation Agricole</title>
+  <meta name="description" content="YEYA — Organisation agricole du Bafing : projets, réalisations et rapports" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Add a few custom animations and utilities */
+    @keyframes float { 0% { transform: translateY(0px);} 50% { transform: translateY(-8px);} 100% { transform: translateY(0px);} }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+  .glass { background: rgba(255,255,255,0.06); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    /* badge */
+    .pulse-border { box-shadow: 0 0 0 0 rgba(59,130,246,0.4); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(59,130,246,0.4);} 70% { box-shadow: 0 0 0 12px rgba(59,130,246,0);} 100% { box-shadow: 0 0 0 0 rgba(59,130,246,0);} }
+  
+    
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        
+        .contact-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2304a777' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .form-input:focus {
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+            background-color: white;
+        }
+        
+        .submit-btn {
+            transition: all 0.3s ease;
+            background: linear-gradient(to right, #047857, #059669);
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+        }
+        
+        .contact-icon {
+            color: #10b981;
+            background-color: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .floating-label {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .floating-label input,
+        .floating-label select,
+        .floating-label textarea {
+            padding-top: 1.5rem;
+        }
+        
+        .floating-label label {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+        
+        .floating-label input:focus + label,
+        .floating-label select:focus + label,
+        .floating-label textarea:focus + label,
+        .floating-label input:not(:placeholder-shown) + label,
+        .floating-label select:not([value=""]):valid + label,
+        .floating-label textarea:not(:placeholder-shown) + label {
+            top: 0.25rem;
+            font-size: 0.75rem;
+            color: #10b981;
+        }}
+    </style>
+</head>
+<body class="bg-gradient-to-b from-green-50 via-white to-yellow-50 text-gray-900 antialiased">
+  <!-- NAV -->
+  <header class="fixed w-full z-30">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 lg:py-6 glass rounded-2xl shadow-xl border border-green-100 backdrop-blur-md bg-white/60">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-green-600 to-orange-500 flex items-center justify-center text-white font-bold shadow-lg animate-float border-4 border-white/40">
+          <img src="media/mouna.png" alt="">
+        </div>
+        <div>
+          <a href="#hero" class="text-lg font-extrabold tracking-wide text-gray-900 hover:text-green-700 transition">Dr Miaman KONE</span></a>
+          <p class="text-xs text-gray-500">Economiste Rural, Cadre de la region du Bafing</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-2 lg:gap-6">
+        <a href="index.html" class="nav-link px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition">Accueil</a>
+        <a href="projets.html" class="nav-link px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition">Mes projets</a>
+        <a href="#team" class="nav-link px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition">Équipe</a>
+        <a href="#contact" class="ml-2 px-5 py-2 rounded-full font-semibold bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg hover:scale-105 hover:from-green-600 hover:to-green-800 transition-transform duration-200">Contact</a>
+      </div>
+      <button id="nav-toggle" class="md:hidden p-2 rounded-xl bg-white/80 shadow-lg border border-green-100 hover:bg-green-50 transition" title="Ouvrir le menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+    <div id="mobile-nav" class="md:hidden glass shadow-xl rounded-b-2xl border border-green-100 bg-white/90 hidden">
+      <div class="px-6 py-4 flex flex-col gap-2">
+        <a href="index.html" class="py-3 px-4 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Accueil</a>
+        <a href="projets.html" class="py-3 px-4 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Mes projets</a>
+     
+        <a href="#team" class="py-3 px-4 rounded-lg hover:bg-green-50 hover:text-green-700 transition">Équipe</a>
+        <a href="#contact" class="py-3 px-4 rounded-full bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg hover:scale-105 transition-transform">Contact</a>
+      </div>
+    </div>
+    <style>
+      .nav-link.active, .nav-link:focus {
+        background: linear-gradient(90deg, #bbf7d0 0%, #6ee7b7 100%);
+        color: #047857 !important;
+        box-shadow: 0 2px 8px 0 rgba(16,185,129,0.08);
+      }
+    </style>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="pt-28 pb-20">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight"> <span class="text-orange-600">Un parcours d'excellence</span>  au service du monde rural</h1>
+        <p class="text-gray-700">Fort de 30 années d'une carrière entièrement dédiée à l'économie rurale et au développement, Dr. Miaman KONE . C'est un homme de terrain, un architecte de projets qui sait traduire les besoins des populations en solutions durables. Avec plus de 300 missions réussies à son actif en Côte d'Ivoire et dans la sous-région, son expertise est reconnue, que ce soit pour l'analyse des chaînes de valeur agricoles, l'audit de projets ou le montage de dossiers complexes.
+     Il a fait le choix de mettre cette vaste expérience au service de sa région d'origine, le Bafing, en tant que Président de l'Organisation Agricole YEYA.</p>
+        <div class="flex gap-4 items-center">
+          <a href="#contact" class="px-6 py-3 rounded-full bg-orange-600 text-white shadow-lg">Nous contacter</a>
+          <a href="#reports" class="px-6 py-3 rounded-full border border-green-600">Voir les rapports</a>
+        </div>
+        <div class="mt-4 flex gap-3 text-sm">
+          <div class="p-3 rounded-lg bg-white shadow-sm">
+            <div class="text-xs text-gray-500">Depuis</div>
+            <div class="font-bold text-green-600">2004</div>
+          </div>
+          <div class="p-3 rounded-lg bg-white shadow-sm">
+            <div class="text-xs text-gray-500">Villages accompagnés</div>
+            <div class="font-bold">200+</div>
+          </div>
+          <div class="p-3 rounded-lg bg-white shadow-sm">
+            <div class="text-xs text-gray-500">Superficie (Ha)</div>
+            <div class="font-bold">~1000</div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-2xl overflow-hidden shadow-2xl">
+          <img src="media/mk.jpg" alt="agriculture" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute -bottom-6 left-6 bg-white p-4 rounded-xl shadow-lg w-64">
+          <h3 class="font-semibold">Message clé</h3>
+          <p class="text-sm text-gray-600">"Poursuivre l'excellence au service du monde rural."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+
+
+  <!-- ABOUT -->
+  <section id="about" class="py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <div class="lg:col-span-2 space-y-8">
+          <div class="flex items-center gap-4 mb-2">
+            <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-green-500 to-green-300 text-white shadow-lg">
+              <i class="fa-solid fa-seedling text-2xl"></i>
+            </span>
+            <h2 class="text-3xl font-extrabold tracking-tight text-green-700">À propos de YEYA</h2>
+            <span class="ml-2 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold shadow">Depuis 2004</span>
+          </div>
+          <p class="text-lg text-gray-700 bg-white/70 rounded-xl p-4 shadow border-l-4 border-green-400">YEYA (« Espoir ») accompagne la production vivrière, la promotion du sésame et l’autonomisation rurale dans plus de <span class="font-bold text-green-700">200 villages</span> du Bafing.</p>
+
+          <div class="grid md:grid-cols-2 gap-6 mt-6">
+            <div class="p-6 rounded-2xl glass shadow-lg border-l-4 border-green-400 flex flex-col gap-2">
+              <h4 class="font-semibold text-green-700 flex items-center gap-2"><i class="fa-solid fa-bullseye"></i> Objectifs</h4>
+              <ul class="mt-2 text-base text-gray-700 space-y-1 list-disc ml-5">
+                <li>Restauration de la sécurité alimentaire</li>
+                <li>Appui à la production et commercialisation de vivriers</li>
+                <li>Développement de l’élevage</li>
+                <li>Alphabétisation et santé communautaire</li>
+              </ul>
+            </div>
+            <div class="p-6 rounded-2xl glass shadow-lg border-l-4 border-green-400 flex flex-col gap-2">
+              <h4 class="font-semibold text-green-700 flex items-center gap-2"><i class="fa-solid fa-truck"></i> Moyens logistiques</h4>
+              <p class="text-base text-gray-700 mt-2 flex items-center gap-2"><i class="fa-solid fa-house-chimney"></i> Maison du Paysan à Foungbesso</p>
+              <p class="text-base text-gray-700 flex items-center gap-2"><i class="fa-solid fa-motorcycle"></i> Motos, matériel de bureau, équipes terrain</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="p-8 rounded-2xl glass shadow-xl border border-green-200 flex flex-col items-start gap-4 animate-float">
+          <h3 class="text-lg font-bold text-green-700 flex items-center gap-2"><i class="fa-solid fa-address-book"></i> Contacts clés</h3>
+          <div class="flex flex-col gap-2 w-full">
+            <div class="flex items-center gap-2 text-gray-800"><i class="fa-solid fa-user-tie text-green-500"></i> <span class="font-medium">Dr Miaman Koné</span> <span class="ml-auto text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Président</span> <span class="ml-2 font-bold">01 01 05 03 67</span></div>
+            <div class="flex items-center gap-2 text-gray-800"><i class="fa-solid fa-user text-green-500"></i> <span class="font-medium">Mr Diomandé Zoumana</span> <span class="ml-auto text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Direction exécutive</span> <span class="ml-2 font-bold">07 49 19 19 08</span></div>
+            <div class="flex items-center gap-2 text-gray-800"><i class="fa-solid fa-user text-green-500"></i> <span class="font-medium">Mr Kone doh Mohamed</span> <span class="ml-auto text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Chef d'antenne à Foungbesso</span> <span class="ml-2 font-bold">07 98 81 44 65 </span></div>
+        </div>
+          <a href="#contact" class="mt-2 text-sm inline-block bg-gradient-to-r from-green-500 to-green-700 text-white px-5 py-2 rounded-full shadow-lg hover:scale-105 transition-transform">Envoyer un message</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+   <!-- J'AIME MON VILLAGE -->
+  <section id="jaime-mon-village" class="py-16 bg-gradient-to-r from-green-50 via-white to-orange-50 flex items-center justify-center">
+    <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-8 items-center px-4">
+      <img src="media/IMG_3845.jpg" alt="J'aime mon village" class="rounded-2xl shadow-xl object-cover w-full h-96 md:h-full">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-green-700 mb-4 flex items-center gap-2"><i class="fa-solid fa-heart text-orange-500"></i> J'aime mon village</h2>
+        <p class="text-lg text-gray-700 bg-white/80 rounded-xl p-4 shadow border-l-4 border-green-400">
+          L’initiative <strong>J’aime mon village</strong> a été lancée par Dr Miaman Koné dans la région du Bafing, inspirée du concept de développement des villages en Corée du Sud, initié par leur président. Cette démarche vise à mobiliser toutes les forces vives pour le progrès local.
+          <br><br>
+          Pour fédérer les énergies, une plateforme WhatsApp a été créée, réunissant plus de <strong>400 membres</strong> : cadres, villageois, membres de la diaspora. Chacun y partage ses idées, ses projets et ses actions pour le développement du village, dans un esprit de solidarité et d’innovation.
+          <br><br>
+          À travers cette initiative, Dr Miaman Koné met en avant ses projets et son attachement profond à sa terre natale, convaincu que l’amour du village est le moteur du développement durable.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- PROJECTS/S -->
+  <section id="projects" class="py-12 bg-white/60">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-orange-500 to-orange-300 text-white shadow-lg">
+          <i class="fa-solid fa-hand-holding-seedling text-2xl"></i>
+        </span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-orange-600">Projets impactants sa région</h2>
+        <span class="ml-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-bold shadow">Impact local</span>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article class="p-6 rounded-2xl glass shadow-xl border-l-4 border-orange-400 flex flex-col gap-2 animate-fadein hover:scale-[1.05] hover:shadow-2xl transition-transform duration-300">
+          <div class="flex items-center gap-2 mb-2"><i class="fa-solid fa-seedling text-orange-500"></i> <h3 class="font-semibold text-lg">Parcelle semencière — Projet riz</h3></div>
+          <p class="text-gray-700">Création parcelle semencière (8.5 ha). <span class="inline-block bg-orange-100 text-orange-700 px-2 py-0.5 rounded text-xs ml-1">CBSS / Ministère de l'agriculture</span></p>
+        </article>
+        <article class="p-6 rounded-2xl glass shadow-xl border-l-4 border-orange-400 flex flex-col gap-2 animate-fadein hover:scale-[1.05] hover:shadow-2xl transition-transform duration-300 delay-100">
+          <div class="flex items-center gap-2 mb-2"><i class="fa-solid fa-leaf text-orange-500"></i> <h3 class="font-semibold text-lg">Sésame & soja biologique</h3></div>
+          <p class="text-gray-700">Promotion de la culture de sésame et production de soja-bio, <span class="inline-block bg-orange-100 text-orange-700 px-2 py-0.5 rounded text-xs ml-1">UFAB & privés</span></p>
+        </article>
+        <article class="p-6 rounded-2xl glass shadow-xl border-l-4 border-orange-400 flex flex-col gap-2 animate-fadein hover:scale-[1.05] hover:shadow-2xl transition-transform duration-300 delay-200">
+          <div class="flex items-center gap-2 mb-2"><i class="fa-solid fa-people-group text-orange-500"></i> <h3 class="font-semibold text-lg">Renforcement des capacités</h3></div>
+          <p class="text-gray-700">Alphabétisation, épargne, comités villageois.</p>
+        </article>
+        <article class="p-6 rounded-2xl glass shadow-xl border-l-4 border-orange-400 flex flex-col gap-2 animate-fadein hover:scale-[1.05] hover:shadow-2xl transition-transform duration-300 delay-300">
+          <div class="flex items-center gap-2 mb-2"><i class="fa-solid fa-file-circle-check text-orange-500"></i> <h3 class="font-semibold text-lg">Zero sans papier</h3></div>
+          <p class="text-gray-700">Gestion documentaire administrative (actes, etc.).</p>
+        </article>
+        <article class="p-6 rounded-2xl glass shadow-xl border-l-4 border-orange-400 flex flex-col gap-2 animate-fadein hover:scale-[1.05] hover:shadow-2xl transition-transform duration-300 delay-400">
+          <div class="flex items-center gap-2 mb-2"><i class="fa-solid fa-handshake-angle text-orange-500"></i> <h3 class="font-semibold text-lg">Conflits agriculteurs & éleveurs</h3></div>
+          <p class="text-gray-700">Médiation et résolution des conflits.</p>
+        </article>
+        <article class="p-6 rounded-2xl glass shadow-xl border-l-4 border-orange-400 flex flex-col gap-2 animate-fadein hover:scale-[1.05] hover:shadow-2xl transition-transform duration-300 delay-500">
+          <div class="flex items-center gap-2 mb-2"><i class="fa-solid fa-paperclip text-orange-500"></i> <h3 class="font-semibold text-lg">Plan de developpement locale (PDL)</h3></div>
+          <p class="text-gray-700">Mise en place des plans de developpement pour les localités villageois.</p>
+        </article>
+      </div>
+      <div class="mt-8 flex justify-center">
+        <a href="#" class="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full shadow-lg hover:scale-105 transition-transform font-semibold text-base">Voir plus</a>
+      </div>
+      <style>
+        @keyframes fadein {
+          0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .animate-fadein { animation: fadein 1s cubic-bezier(.4,0,.2,1) both; }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+      </style>
+    </div>
+  </section>
+
+    <!-- ACTUALITÉ -->
+  <section id="actualite" class="py-16 bg-gradient-to-r from-orange-50 via-white to-green-50 flex items-center justify-center">
+     <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-8 items-center px-4">
+      <img src="media/sodia4.jpg" alt="Actualité YEYA" class="rounded-2xl shadow-xl object-cover w-full h-72 md:h-full">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-orange-600 mb-4 flex items-center gap-2"><i class="fa-solid fa-bullhorn"></i> Actualité : Sodiako Tour</h2>
+        <p class="text-lg text-gray-700 bg-white/80 rounded-xl p-4 shadow border-l-4 border-orange-400">
+          <strong>Sodiako Tour</strong> est une initiative majeure menée dans la région du Bafing en Côte d'Ivoire. Ce projet a permis d'établir des règlements intérieurs pour <strong>100 groupements</strong> agricoles répartis dans toute la région. Grâce à cette démarche, chaque groupement dispose désormais d'une identité propre, d'un cadre de fonctionnement clair et de règles adaptées à ses besoins.
+          <br><br>
+          L'objectif principal de Sodiako Tour est de renforcer la cohésion, la transparence et l'efficacité des groupements, tout en favorisant leur reconnaissance officielle auprès des partenaires et institutions. Les équipes ont sillonné les villages pour accompagner les membres dans la rédaction, la validation et l'adoption de ces règlements, garantissant ainsi une gestion participative et durable.
+          <br><br>
+          Ce projet marque une étape essentielle pour l'autonomisation des acteurs ruraux du Bafing et ouvre de nouvelles perspectives pour le développement local.
+        </p>
+        <button id="btn-voir-details" class="mt-6 px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 to-green-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform">Voir détails</button>
+      </div>
+    </div>
+
+    <!-- MODALE ACTUALITÉ -->
+    <div id="modal-actualite" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center hidden">
+      <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 relative animate-fadein">
+        <button id="close-modal-actualite" class="absolute top-4 right-4 text-gray-500 hover:text-orange-600 text-2xl font-bold">&times;</button>
+        <h3 class="text-2xl font-bold text-orange-600 mb-4 flex items-center gap-2"><i class="fa-solid fa-images"></i> Détails de l'actualité</h3>
+        <div class="relative overflow-hidden rounded-xl">
+          <div id="carousel-actualite" class="flex transition-transform duration-700 w-full">
+            <img src="media/sodia2.jpg" class="carousel-img w-full h-full object-cover rounded-xl" alt="Actu 1">
+            <img src="media/sodia3.jpg" class="carousel-img w-full h-full object-cover rounded-xl hidden" alt="Actu 2">
+            <img src="media/sodia5.jpg" class="carousel-img w-full h-full object-cover rounded-xl hidden" alt="Actu 3">
+            <img src="media/sodia6.jpg" class="carousel-img w-full h-full object-cover rounded-xl hidden" alt="Actu 4">
+            <img src="media/sodia1.jpg" alt="Sodiako Tour" class="carousel-img w-full h-full object-cover rounded-xl hidden">
+          </div>
+          <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow hover:bg-orange-100" title="Image précédente" aria-label="Voir l'image précédente"><i class="fa-solid fa-chevron-left text-orange-600"></i></button>
+          <button id="carousel-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow hover:bg-orange-100" title="Image suivante" aria-label="Voir l'image suivante"><i class="fa-solid fa-chevron-right text-orange-600"></i></button>
+        </div>
+        <div class="mt-4 text-gray-700 text-base">Découvrez en images les moments forts de la campagne agricole et les actions menées sur le terrain par l’équipe YEYA.</div>
+      </div>
+    </div>
+
+    <style>
+      .animate-fadein { animation: fadein 0.7s cubic-bezier(.4,0,.2,1) both; }
+      @keyframes fadein { 0% { opacity: 0; transform: scale(0.95) translateY(40px);} 100% { opacity: 1; transform: scale(1) translateY(0);} }
+    </style>
+
+    <script>
+      // Modale actualité
+      const btnVoirDetails = document.getElementById('btn-voir-details');
+      const modal = document.getElementById('modal-actualite');
+      const closeModal = document.getElementById('close-modal-actualite');
+      btnVoirDetails.addEventListener('click', () => { modal.classList.remove('hidden'); });
+      closeModal.addEventListener('click', () => { modal.classList.add('hidden'); });
+      window.addEventListener('keydown', (e) => { if(e.key === 'Escape') modal.classList.add('hidden'); });
+
+      // Carousel
+      const imgs = Array.from(document.querySelectorAll('#carousel-actualite .carousel-img'));
+      let idx = 0;
+      function showImg(i) {
+        imgs.forEach((img, j) => img.classList.toggle('hidden', j !== i));
+      }
+      document.getElementById('carousel-prev').onclick = () => { idx = (idx-1+imgs.length)%imgs.length; showImg(idx); };
+      document.getElementById('carousel-next').onclick = () => { idx = (idx+1)%imgs.length; showImg(idx); };
+      showImg(idx);
+    </script>
+  </section>
+
+    <!-- VISION -->
+  <section id="vision" class="py-16 bg-white/80 flex items-center justify-center">
+    <div class="max-w-3xl mx-auto w-full text-center px-4">
+      <div class="inline-flex items-center gap-3 mb-4">
+        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-green-500 to-orange-400 text-white shadow-lg">
+          <i class="fa-solid fa-eye text-2xl"></i>
+        </span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-green-700">Notre vision pour le Bafing</h2>
+      </div>
+      <p class="mt-6 text-lg md:text-xl text-gray-700 bg-gradient-to-r from-orange-50 via-white to-green-50 rounded-xl p-6 shadow border-l-4 border-orange-400 animate-fadein">
+        Offrir à la région du Bafing un avenir durable, prospère et solidaire, où chaque village bénéficie d’une agriculture innovante, d’une éducation accessible, d’un environnement préservé et d’une cohésion sociale renforcée.<br>
+        <span class="block mt-4 text-base text-green-700 font-semibold">MK s’engage à faire du Bafing un modèle d’espoir, de progrès et d’autonomie pour les générations futures.</span>
+      </p>
+    </div>
+  </section>
+
+
+
+
+  <!-- TEAM -->
+  <section id="team" class="py-12 bg-white/60">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-6">Équipe</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl bg-white shadow text-center">
+          <div class="w-24 h-24 rounded-full mx-auto bg-green-100 flex items-center justify-center font-bold text-green-700">MK</div>
+          <h4 class="mt-4 font-semibold">Dr Miaman Koné</h4>
+          <p class="text-sm text-gray-600">Président du Conseil d'Administration</p>
+        </div>
+        <div class="p-6 rounded-xl bg-white shadow text-center">
+          <div class="w-24 h-24 rounded-full mx-auto bg-green-100 flex items-center justify-center font-bold text-green-700">DZ</div>
+          <h4 class="mt-4 font-semibold">Diomandé Zoumana</h4>
+          <p class="text-sm text-gray-600">Direction Exécutive</p>
+        </div>
+        <div class="p-6 rounded-xl bg-white shadow text-center">
+          <div class="w-24 h-24 rounded-full mx-auto bg-green-100 flex items-center justify-center font-bold text-green-700">TF</div>
+          <h4 class="mt-4 font-semibold">Chargés & Bénévoles</h4>
+          <p class="text-sm text-gray-600">Equipe terrain et formateurs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+ <section id="contact" class="contact-section py-16">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Contactez-nous</h2>
+                <p class="text-green-100 text-lg max-w-2xl mx-auto">Pour partenariat, financement ou informations terrain, notre équipe est à votre écoute. Nous vous répondrons dans les plus brefs délais.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1 bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Nos informations</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="contact-icon mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Adresse</h4>
+                                <p class="text-gray-600">123 Rue de l'Environnement<br>75000 Paris, France</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="contact-icon mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Téléphone</h4>
+                                <p class="text-gray-600">+33 1 23 45 67 89</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="contact-icon mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-gray-600">contact@ecologie.org</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="contact-icon mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Horaires</h4>
+                                <p class="text-gray-600">Lun - Ven: 9h - 18h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h4 class="font-medium text-gray-800 mb-4">Suivez-nous</h4>
+                        <div class="flex space-x-4">
+              <a href="#" class="text-green-500 hover:text-green-600 transition-colors" title="Facebook" aria-label="Facebook">
+                <i class="fab fa-facebook-f text-lg"></i> Facebook
+              </a>
+              <a href="#" class="text-green-500 hover:text-green-600 transition-colors" title="Twitter" aria-label="Twitter">
+                <i class="fab fa-twitter text-lg"></i> Twitter
+              </a>
+              <a href="#" class="text-green-500 hover:text-green-600 transition-colors" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in text-lg"></i> LinkedIn
+              </a>
+              <a href="#" class="text-green-500 hover:text-green-600 transition-colors" title="Instagram" aria-label="Instagram">
+                <i class="fab fa-instagram text-lg"></i> Instagram
+              </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2 bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Envoyez-nous un message</h3>
+                    
+                    <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="floating-label">
+                            <input type="text" id="name" name="name" placeholder=" " class="form-input w-full p-3 rounded-lg" required />
+                            <label for="name">Nom complet *</label>
+                        </div>
+                        
+                        <div class="floating-label">
+                            <input type="email" id="email" name="email" placeholder=" " class="form-input w-full p-3 rounded-lg" required />
+                            <label for="email">Adresse email *</label>
+                        </div>
+                        
+                        <div class="floating-label">
+                            <input type="tel" id="phone" name="phone" placeholder=" " class="form-input w-full p-3 rounded-lg" />
+                            <label for="phone">Numéro de téléphone</label>
+                        </div>
+                        
+                        <div class="floating-label">
+                            <select id="subject" name="subject" class="form-input w-full p-3 rounded-lg" required>
+                                <option value=""></option>
+                                <option>Partenariat</option>
+                                <option>Don</option>
+                                <option>Informations projet</option>
+                                <option>Autre</option>
+                            </select>
+                            <label for="subject">Sujet *</label>
+                        </div>
+                        
+                        <div class="floating-label md:col-span-2">
+                            <textarea id="message" name="message" placeholder=" " rows="5" class="form-input w-full p-3 rounded-lg" required></textarea>
+                            <label for="message">Votre message *</label>
+                        </div>
+                        
+                        <div class="md:col-span-2 flex flex-col md:flex-row justify-between items-center pt-4">
+                            <div class="text-sm text-gray-500 mb-4 md:mb-0">
+                                <i class="fas fa-info-circle mr-1"></i> Nous répondons généralement sous 48h.
+                            </div>
+                            <button type="submit" class="submit-btn px-8 py-3 text-white rounded-full font-medium flex items-center">
+                                <i class="fas fa-paper-plane mr-2"></i> Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+ </section>
+
+  <!-- SLOGAN -->
+  <section id="slogan" class="py-10 bg-gradient-to-r from-orange-50 via-white to-green-50 flex items-center justify-center">
+    <div class="max-w-2xl mx-auto w-full text-center">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 relative">
+        <span class="slogan-gradient">mahouyeya, espoir du bafing</span>
+      </h2>
+    </div>
+    <style>
+      .slogan-gradient {
+        display: inline-block;
+  background: linear-gradient(270deg, #fbbf24, #22c55e, #fbbf24, #ea580c, #22c55e, #fbbf24);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+        animation: gradientMove 3.5s ease-in-out infinite alternate, sloganPop 1.2s cubic-bezier(.4,0,.2,1) 1;
+        filter: drop-shadow(0 2px 16px #fbbf24) drop-shadow(0 1px 0 #fff);
+      }
+      @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      @keyframes sloganPop {
+        0% { opacity: 0; transform: scale(0.92) translateY(40px); }
+        60% { opacity: 1; transform: scale(1.08) translateY(-8px); }
+        100% { opacity: 1; transform: scale(1) translateY(0); }
+      }
+    </style>
+  </section>
+
+  <footer class="py-8 bg-white/80 mt-8">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-600">© YEYA — Organisation Agricole • Tous droits réservés</div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Mobile nav toggle
+    document.getElementById('nav-toggle').addEventListener('click', function(){
+      const m = document.getElementById('mobile-nav');
+      m.classList.toggle('hidden');
+    });
+
+    // Simple form handler (demo only)
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Merci — votre message a été enregistré (démo).');
+      this.reset();
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('opacity-100','translate-y-0');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('section').forEach(s => {
+      s.classList.add('opacity-0','translate-y-6','transition','duration-700');
+      observer.observe(s);
+    });
+
+    // Small accessibility: prefer-reduced-motion
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.animate-float').forEach(el => el.style.animation = 'none');
+    }
+  </script>
+</body>
+</html>
